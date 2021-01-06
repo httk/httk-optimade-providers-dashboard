@@ -3,6 +3,8 @@ name: Building and deploying GitHub pages
 on:
   # schedule runs _only_ for the default branch (for a repository) and the base branch (for a PR).
   # See https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule for more info.
+  workflow_dispatch:
+  
   schedule:
     # See https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#scheduled-events-schedule
     # run every day at 05:20 UTC
