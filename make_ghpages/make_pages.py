@@ -18,6 +18,7 @@ HTML_FOLDER = 'providers'  # Name for subfolder where HTMLs for providers are go
 TEMPLATES_FOLDER = 'templates'
 
 PROVIDERS_URL = 'https://providers.optimade.org/v1/links/'
+CHECK_PROVIDERS = ['httk', 'omdb']
 
 # Absolute paths
 pwd = os.path.split(os.path.abspath(__file__))[0]
@@ -213,6 +214,8 @@ def make_pages():
     all_provider_data = []
     # Create HTML view for each provider
     for provider in providers:
+        if CHECK_PROVIDERS is not None and provider['id'] not in CHECK_PROVIDERS:
+            continue
         provider_data = {
             'id': provider['id'],
             'last_check_time': last_check_time
